@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import styled from 'styled-components'
 import { Text, Button, Input, InputProps, Flex, Link } from '@pancakeswap/uikit'

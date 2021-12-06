@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import styled from 'styled-components'
 import { ChartIcon, Flex, Heading, HistoryIcon, IconButton, NotificationDot, Text, useModal } from '@pancakeswap/uikit'
@@ -30,11 +32,9 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDispl
   return (
     <CurrencyInputContainer>
       <Flex width="100%" alignItems="flex-start" justifyContent="space-between">
-        {setIsChartDisplayed && (
-          <IconButton onClick={toggleChartDisplayed} variant="text" scale="sm">
-            <ChartIcon width="24px" color="primary" />
-          </IconButton>
-        )}
+        <IconButton variant="text" scale="sm">
+          <ChartIcon width="24px" color="primary" />
+        </IconButton>
         <Flex flexDirection="column" alignItems="center">
           <Heading as="h2" mb="8px">
             {title}

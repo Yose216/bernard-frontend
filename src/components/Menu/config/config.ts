@@ -22,7 +22,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
-    label: t('Earn'),
+    label: t('Stake'),
     href: '/farms',
     icon: 'Earn',
     items: [
@@ -37,32 +37,40 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
-    label: t('Win'),
-    href: '/prediction',
-    icon: 'Trophy',
+    label: t('Play!'),
+    href: '/farms',
+    icon: 'Earn',
     items: [
       {
-        label: t('Prediction (BETA)'),
-        href: '/prediction',
+        label: t('Lottery'),
+        href: '/farms',
       },
       {
-        label: t('Lottery'),
-        href: '/lottery',
+        label: t('Bets'),
+        href: '/pools',
+      },
+      {
+        label: t('BFC'),
+        href: '/pools',
       },
     ],
   },
   {
-    label: t('NFT'),
-    href: `${nftsBaseUrl}`,
-    icon: 'Nft',
+    label: t('Ecosystem'),
+    href: '/farms',
+    icon: 'Earn',
     items: [
       {
-        label: t('Overview'),
-        href: `${nftsBaseUrl}`,
+        label: t('Infos'),
+        href: '/farms',
       },
       {
-        label: t('Collections'),
-        href: `${nftsBaseUrl}/collections`,
+        label: t('Algo perfs'),
+        href: '/pools',
+      },
+      {
+        label: t('Barry Foundation'),
+        href: '/pools',
       },
     ],
   },
@@ -73,11 +81,11 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     hideSubNav: true,
     items: [
       {
-        label: t('Info'),
+        label: t('#BERNARMY'),
         href: '/info',
       },
       {
-        label: t('IFO'),
+        label: t('Infos'),
         href: '/ifo',
       },
       {
@@ -85,24 +93,8 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
         href: '/voting',
       },
       {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Leaderboard'),
+        label: t('Merch'),
         href: '/teams',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-      {
-        label: t('Docs'),
-        href: 'https://docs.pancakeswap.finance',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],
   },

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import { Modal, Flex, Text } from '@pancakeswap/uikit'
 import { ethers } from 'ethers'

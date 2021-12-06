@@ -5,7 +5,7 @@ import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'
 
 const Outer = styled(Box)<{ background?: string }>`
-  background: ${({ theme, background }) => background || theme.colors.gradients.bubblegum};
+  background: linear-gradient(180deg, #27262cb3 15%, #548d65 100%);
 `
 
 const Inner = styled(Container)`

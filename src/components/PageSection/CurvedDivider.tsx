@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import styled from 'styled-components'
 import { ConcaveTop, ConcaveBottom, ConvexTop, ConvexBottom } from './svg/CurvedSvg'
@@ -17,10 +19,7 @@ interface WrapperProps {
 
 const Wrapper = styled.div<WrapperProps>`
   background: ${({ theme, dividerFill }) => {
-    if (theme.isDark) {
-      return dividerFill?.dark || dividerFill?.light || 'none'
-    }
-    return dividerFill?.light || dividerFill?.dark || 'none'
+    return dividerFill?.dark || dividerFill?.light || 'none'
   }};
   z-index: ${({ index }) => index};
   position: relative;

@@ -11,8 +11,6 @@
     "integration-test": "start-server-and-test 'serve -s build -p 3000' http://localhost:3000 'cypress run'",
     "eject": "react-scripts eject",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
-    "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "updateLPsAPR": "NODE_PATH=./src ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/updateLPsAPR.ts",
     "prepare": "husky install"
   },
@@ -32,7 +30,7 @@
     "@binance-chain/bsc-connector": "^1.0.0",
     "@ethersproject/experimental": "^5.0.1",
     "@pancakeswap/sdk": "^2.4.0",
-    "@pancakeswap/uikit": "^0.58.1",
+    "@pancakeswap/uikit": "Yose216/bernard-uikit",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/multicodec": "^1.0.0",
     "@types/node": "^13.13.5",
@@ -84,8 +82,6 @@
     "typescript": "^4.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
     "@pancakeswap/eslint-config-pancake": "^1.1.0",
     "@types/canvas-confetti": "^1.4.2",
     "@types/jest": "^26.0.23",
@@ -96,8 +92,6 @@
     "cypress": "^8.3.1",
     "eslint": "^7.26.0",
     "eslint-plugin-cypress": "^2.11.3",
-    "husky": "^7.0.0",
-    "prettier": "^2.3.0",
     "serve": "^12.0.0",
     "source-map-explorer": "^2.5.2",
     "start-server-and-test": "^1.14.0",

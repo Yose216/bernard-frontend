@@ -62,13 +62,19 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
                 </RouterLink>
               )}
             </Button>
-            {secondaryButton.external ? (
-              <Link external href={secondaryButton.to}>
-                {t(secondaryButton.text)}
-              </Link>
-            ) : (
-              <RouterLink to={secondaryButton.to}>{t(secondaryButton.text)}</RouterLink>
-            )}
+
+            { secondaryButton ?
+              secondaryButton.external ? (
+                <Link external href={secondaryButton.to}>
+                  {t(secondaryButton.text)}
+                </Link>
+              ) : (
+                <RouterLink to={secondaryButton.to}>{t(secondaryButton.text)}</RouterLink>
+              )
+              : null
+            }
+
+
           </Flex>
         </Flex>
         <Flex
@@ -77,7 +83,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
         >
-          <CompositeImage {...images} />
+          <img src="images/home/trade/bernard.png" alt="bernard"/>
         </Flex>
       </Flex>
     </Flex>

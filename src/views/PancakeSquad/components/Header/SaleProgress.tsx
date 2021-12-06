@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import { Box, lightColors, Progress, Text } from '@pancakeswap/uikit'
 import { ContextApi } from 'contexts/Localization/types'

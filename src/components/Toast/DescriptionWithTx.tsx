@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import { Link, Text } from '@pancakeswap/uikit'
 import { getBscScanLink } from 'utils'

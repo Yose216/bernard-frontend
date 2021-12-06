@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Box } from '@pancakeswap/uikit'

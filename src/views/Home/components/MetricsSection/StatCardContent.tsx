@@ -1,10 +1,11 @@
 import React from 'react'
-import { Heading, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Heading, Flex, Text, Button, useMatchBreakpoints } from '@pancakeswap/uikit'
 
-const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlightColor: string }> = ({
+const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlightColor: string, textBtn?: string }> = ({
   headingText,
   bodyText,
   highlightColor,
+  textBtn
 }) => {
   const { isMobile, isTablet } = useMatchBreakpoints()
   const isSmallerScreen = isMobile || isTablet
@@ -14,22 +15,26 @@ const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlig
 
   return (
     <Flex
-      minHeight={[null, null, null, '168px']}
+      minHeight={[null, null, null, '250px']}
       minWidth="232px"
-      width="fit-content"
       flexDirection="column"
-      justifyContent="flex-end"
-      mt={[null, null, null, '64px']}
+      justifyContent="center"
+      alignItems="center"
     >
       {isSmallerScreen && remainingWords.length > 13 ? (
-        <Heading scale="lg">{remainingWords}</Heading>
+        <Heading scale="md">{remainingWords}</Heading>
       ) : (
-        <Heading scale="xl">{remainingWords}</Heading>
+        <Heading scale="lg">{remainingWords}</Heading>
       )}
       <Heading color={highlightColor} scale="xl" mb="24px">
         {lastWord}
       </Heading>
+
       <Text color="textSubtle">{bodyText}</Text>
+
+      <Button variant="tertiary" mt="20px" width="50%" style={{color: highlightColor}}>
+        {textBtn}
+      </Button>
     </Flex>
   )
 }

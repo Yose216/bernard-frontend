@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable */
 import { BigNumber } from 'ethers'
 import React, { useEffect, useState } from 'react'
 import { AutoRenewIcon, Button, useModal } from '@pancakeswap/uikit'
