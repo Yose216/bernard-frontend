@@ -62,7 +62,7 @@ export const useFetchLottery = () => {
 export const useLottery = () => {
   const currentRound = useSelector((state: State) => state.lottery.currentRound)
   const processedCurrentRound = useProcessLotteryResponse(currentRound)
-
+console.log(currentRound)
   const isTransitioning = useSelector((state: State) => state.lottery.isTransitioning)
 
   const currentLotteryId = useGetCurrentLotteryId()

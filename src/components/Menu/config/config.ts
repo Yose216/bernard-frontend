@@ -38,12 +38,12 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   },
   {
     label: t('Play!'),
-    href: '/farms',
+    href: '/lottery',
     icon: 'Earn',
     items: [
       {
         label: t('Lottery'),
-        href: '/farms',
+        href: '/lottery',
       },
       {
         label: t('Bets'),
@@ -51,50 +51,26 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
       {
         label: t('BFC'),
-        href: '/pools',
+        href: '/bfc',
       },
     ],
   },
   {
     label: t('Ecosystem'),
-    href: '/farms',
+    href: '/infos',
     icon: 'Earn',
     items: [
       {
         label: t('Infos'),
-        href: '/farms',
+        href: '/infos',
       },
       {
         label: t('Algo perfs'),
-        href: '/pools',
+        href: '/algo',
       },
       {
         label: t('Barry Foundation'),
-        href: '/pools',
-      },
-    ],
-  },
-  {
-    label: '',
-    href: '/info',
-    icon: 'More',
-    hideSubNav: true,
-    items: [
-      {
-        label: t('#BERNARMY'),
-        href: '/info',
-      },
-      {
-        label: t('Infos'),
-        href: '/ifo',
-      },
-      {
-        label: t('Voting'),
-        href: '/voting',
-      },
-      {
-        label: t('Merch'),
-        href: '/teams',
+        href: '/barry-foundation',
       },
     ],
   },

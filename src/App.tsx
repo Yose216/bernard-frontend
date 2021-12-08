@@ -55,6 +55,9 @@ const Info = lazy(() => import('./views/Info'))
 const NftMarket = lazy(() => import('./views/Nft/market'))
 const ProfileCreation = lazy(() => import('./views/ProfileCreation'))
 const PancakeSquad = lazy(() => import('./views/PancakeSquad'))
+const BFC = lazy(() => import('./views/BFC'))
+const Algo = lazy(() => import('./views/Algo'))
+const BarryFoundation = lazy(() => import('./views/BarryFoundation'))
 
 // This config is required for number formatting
 BigNumber.config({
@@ -84,9 +87,6 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route exact path="/farms/auction">
-              <FarmAuction />
-            </Route>
             <Route path="/farms">
               <Farms />
             </Route>
@@ -96,49 +96,20 @@ const App: React.FC = () => {
             <Route path="/lottery">
               <Lottery />
             </Route>
-            <Route path="/ifo">
-              <Ifos />
-            </Route>
-            <Route exact path="/teams">
-              <Teams />
-            </Route>
-            <Route path="/teams/:id">
-              <Team />
-            </Route>
-            <Route path="/create-profile">
-              <ProfileCreation />
-            </Route>
-            <Route path="/competition">
-              <TradingCompetition />
-            </Route>
-            <Route exact path="/prediction">
-              <Predictions />
-            </Route>
-            <Route path="/prediction/leaderboard">
-              <PredictionsLeaderboard />
-            </Route>
-            <Route exact path="/voting">
-              <Voting />
-            </Route>
-            <Route exact path="/voting/proposal/create">
-              <CreateProposal />
-            </Route>
-            <Route path="/voting/proposal/:id">
-              <Proposal />
-            </Route>
-
-            {/* NFT */}
-            <Route path="/nfts">
-              <NftMarket />
-            </Route>
-
-            <Route path="/pancake-squad">
-              <PancakeSquad />
-            </Route>
-
             {/* Info pages */}
-            <Route path="/info">
+            <Route path="/infos">
               <Info />
+            </Route>
+            <Route path="/bfc">
+              <BFC />
+            </Route>
+
+            <Route path="/algo">
+              <Algo />
+            </Route>
+
+            <Route path="/barry-foundation">
+              <BarryFoundation />
             </Route>
 
             {/* Using this format because these components use routes injected props. We need to rework them with hooks */}
@@ -156,23 +127,6 @@ const App: React.FC = () => {
             <Route exact path="/create/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
             <Route exact strict path="/remove/:tokens" component={RedirectOldRemoveLiquidityPathStructure} />
             <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
-
-            {/* Redirect */}
-            <Route path="/pool">
-              <Redirect to="/liquidity" />
-            </Route>
-            <Route path="/staking">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/syrup">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/collectibles">
-              <Redirect to="/nfts" />
-            </Route>
-            <Route path="/profile">
-              <Redirect to={`${nftsBaseUrl}/profile/${account?.toLowerCase() || ''}`} />
-            </Route>
 
             {/* 404 */}
             <Route component={NotFound} />

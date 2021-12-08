@@ -3,7 +3,9 @@ import { Heading, Flex, Text, Skeleton, ChartIcon, CommunityIcon, SwapIcon, Farm
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
 import useTheme from 'hooks/useTheme'
-import { formatLocalisedCompactNumber, formatNumber } from 'utils/formatBalance'
+import { usePriceCakeBusd } from 'state/farms/hooks'
+import { useFetchLottery, useLottery } from 'state/lottery/hooks'
+import { getBalanceNumber, formatLocalisedCompactNumber, formatNumber } from 'utils/formatBalance'
 import IconCard, { IconCardData } from '../IconCard'
 import StatCardContent from './StatCardContent'
 import GradientLogo from '../GradientLogoSvg'
@@ -13,6 +15,8 @@ const txCount = 30841921
 const addressCount = 2751624
 
 const Stats = () => {
+  useFetchLottery()
+
   const { t } = useTranslation()
   const data = useGetStats()
   const { theme } = useTheme()
@@ -21,7 +25,17 @@ const Stats = () => {
   const trades = formatLocalisedCompactNumber(txCount)
   const users = formatLocalisedCompactNumber(addressCount)
   const apr = "480%"
-  const lottery = "$120,000"
+
+  const { currentRound: { amountCollectedInCake, status }, isTransitioning} = useLottery()
+
+  const cakePriceBusd = usePriceCakeBusd()
+  const prizeInBusd = amountCollectedInCake.times(cakePriceBusd)
+  let lottery = getBalanceNumber(prizeInBusd)
+  if (lottery) {
+    lottery = lottery.toLocaleString(undefined, {
+      maximumFractionDigits: 0,
+    })
+  }
 
   const tvlText = t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: tvlString })
   const [entrusting, inFunds] = tvlText.split(tvlString)
@@ -52,7 +66,7 @@ const Stats = () => {
         </IconCard>
         <IconCard {...TradesCardData} title="Lottery" mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
-            headingText={t('Amout of prize to win %lottery%', { lottery })}
+            headingText={t('Amout of prize to win $%lottery%', { lottery })}
             bodyText={t('Get your ticket now')}
             highlightColor="#008611"
             textBtn="Try It"

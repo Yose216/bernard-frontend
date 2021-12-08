@@ -122,7 +122,7 @@ const Home: React.FC = () => {
             <WedgeTopRight />
           </InnerWedgeWrapper>
         </OuterWedgeWrapper>
-        <SalesSection {...earnSectionData} />
+        <SalesSection {...earnSectionData}/>
       </PageSection>
 
       <PageSection
