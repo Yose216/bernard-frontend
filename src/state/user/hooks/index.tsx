@@ -196,12 +196,12 @@ export function useUserPoolsViewMode(): [ViewMode, (viewMode: ViewMode) => void]
 export function useUserFarmsViewMode(): [ViewMode, (viewMode: ViewMode) => void] {
   const dispatch = useDispatch<AppDispatch>()
   const userFarmsViewMode = useSelector<AppState, AppState['user']['userFarmsViewMode']>((state) => {
-    return state.user.userFarmsViewMode
+    return ViewMode.Card
   })
 
   const setUserFarmsViewMode = useCallback(
     (viewMode: ViewMode) => {
-      dispatch(updateUserFarmsViewMode({ userFarmsViewMode: viewMode }))
+      dispatch(updateUserFarmsViewMode({ userFarmsViewMode: ViewMode.Card }))
     },
     [dispatch],
   )

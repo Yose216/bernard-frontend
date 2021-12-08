@@ -64,7 +64,7 @@ const CheckPrizesSection = () => {
   const getBody = () => {
     if (!account) {
       return (
-        <Flex alignItems="center" justifyContent="center">
+        <Flex alignItems="center" justifyContent="center" mt="40px">
           <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column" alignItems="center">
             <Heading textAlign="center" color="#F4EEFF">
@@ -81,7 +81,7 @@ const CheckPrizesSection = () => {
     }
     if (hasCheckedForRewards && !hasRewardsToClaim) {
       return (
-        <Flex alignItems="center" justifyContent="center">
+        <Flex alignItems="center" justifyContent="center" mt="40px">
           <TornTicketImage src="/images/lottery/torn-ticket-l.png" alt="torn lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column">
             <Heading textAlign="center" color="#F4EEFF">
@@ -97,7 +97,7 @@ const CheckPrizesSection = () => {
     }
     if (hasCheckedForRewards && hasRewardsToClaim) {
       return (
-        <Flex alignItems="center" justifyContent="center">
+        <Flex alignItems="center" justifyContent="center" mt="40px">
           <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column">
             <Heading textAlign="center" color="#F4EEFF">
@@ -121,7 +121,7 @@ const CheckPrizesSection = () => {
       return t('Check Now')
     }
     return (
-      <Flex alignItems="center" justifyContent="center">
+      <Flex alignItems="center" justifyContent="center" mt="40px">
         <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
         <Flex mx={['4px', null, '16px']} flexDirection="column">
           <Heading textAlign="center" color="#F4EEFF" mb="24px">

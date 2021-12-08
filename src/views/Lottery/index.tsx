@@ -50,10 +50,8 @@ const Lottery = () => {
       <PageSection
         containerProps={{ style: { marginTop: '-30px' } }}
         background={GET_TICKETS_BG}
-        concaveDivider
-        clipFill={{ light: '#7645D9' }}
-        dividerPosition="top"
         index={2}
+                hasCurvedDivider={false}
       >
         <Flex alignItems="center" justifyContent="center" flexDirection="column" pt="24px">
           {status === LotteryStatus.OPEN && (
@@ -75,12 +73,9 @@ const Lottery = () => {
           <NextDrawCard />
         </Flex>
       </PageSection>
-      <PageSection background={CHECK_PRIZES_BG} hasCurvedDivider={false} index={2}>
-        <CheckPrizesSection />
-      </PageSection>
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
-        background={isDark ? FINISHED_ROUNDS_BG_DARK : FINISHED_ROUNDS_BG}
+        background={CHECK_PRIZES_BG}
         hasCurvedDivider={false}
         index={2}
       >
@@ -102,12 +97,12 @@ const Lottery = () => {
               numUserRoundsRequested={numUserRoundsRequested}
             />
           )}
+
+          <CheckPrizesSection />
+
         </Flex>
       </PageSection>
       <PageSection
-        dividerPosition="top"
-        dividerFill={{ light: theme.colors.background }}
-        clipFill={{ light: '#9A9FD0', dark: '#66578D' }}
         index={2}
       >
         <HowToPlay />

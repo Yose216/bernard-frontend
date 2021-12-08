@@ -76,7 +76,7 @@ const NextDrawCard = () => {
   const getPrizeBalances = () => {
     if (status === LotteryStatus.CLOSE || status === LotteryStatus.CLAIMABLE) {
       return (
-        <Heading scale="xl" color="secondary" textAlign={['center', null, null, 'left']}>
+        <Heading scale="xl" color="primary" textAlign={['center', null, null, 'left']}>
           {t('Calculating')}...
         </Heading>
       )
@@ -88,7 +88,7 @@ const NextDrawCard = () => {
         ) : (
           <Balance
             fontSize="40px"
-            color="secondary"
+            color="#008611"
             textAlign={['center', null, null, 'left']}
             lineHeight="1"
             bold
@@ -102,7 +102,7 @@ const NextDrawCard = () => {
         ) : (
           <Balance
             fontSize="14px"
-            color="textSubtle"
+            color="text"
             textAlign={['center', null, null, 'left']}
             unit=" CAKE"
             value={getBalanceNumber(amountCollectedInCake)}
@@ -138,10 +138,10 @@ const NextDrawCard = () => {
 
   return (
     <StyledCard>
-      <CardHeader p="16px 24px">
+      <CardHeader p="16px 24px" style={{background: 'linear-gradient(130deg, #ffd600 0%, #ffbd00 100%)'}}>
         <Flex justifyContent="space-between">
-          <Heading mr="12px">{t('Next Draw')}</Heading>
-          <Text>
+          <Heading mr="12px" color="#008611">{t('Next Draw')}</Heading>
+          <Text color="#008611">
             {currentLotteryId && `#${getNextDrawId()}`} {Boolean(endTime) && getNextDrawDateTime()}
           </Text>
         </Flex>
